@@ -7,17 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace masterpage
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            TextBox btn = Master.FindControl("TextBox1") as TextBox;
-            Label1.Text = btn.Text;
         }
     }
 }
