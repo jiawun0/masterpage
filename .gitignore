@@ -1,0 +1,8 @@
+.vs/                       
+packages/                  
+masterpage/bin/       
+masterpage/Content/  
+masterpage/obj/
+masterpage/Scripts/  
+*.user 
+*.config                                   
