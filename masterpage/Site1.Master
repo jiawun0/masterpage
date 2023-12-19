@@ -33,7 +33,7 @@
             <nav class="navbar navbar-expand-lg bg-secondary text-uppercase " id="mainNav">
                 <div class="container">
                     <a class="navbar-brand" href="#page-top">
-                        <asp:ContentPlaceHolder ID="BrandContent" runat="server">Start Bootstrap</asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="BrandContent" runat="server">這個頁面的名稱</asp:ContentPlaceHolder>
                     </a>
                     <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         Menu
@@ -42,16 +42,16 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <asp:ContentPlaceHolder ID="NavbarLinks" runat="server">
                             <ul class="navbar-nav ms-auto">
-                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.aspx">首頁</a></li>
+                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="login.aspx">登入</a></li>
+                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="logout.aspx">登出</a></li>
                             </ul>
                         </asp:ContentPlaceHolder>
                     </div>
                 </div>
             </nav>
         </div>
-        <div>
+        <div class="d-flex">
             <!-- Sidebar -->
             <ul class="navbar-nav bg-black sidebar sidebar-dark" id="accordionSidebar">
                 <!-- Sidebar - Brand -->
@@ -72,7 +72,7 @@
                     <a class="nav-link" href="index.html">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>
-                            <asp:ContentPlaceHolder ID="DashboardText" runat="server">Dashboard</asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="DashboardText" runat="server">後台管理</asp:ContentPlaceHolder>
                         </span>
                     </a>
                 </li>
@@ -85,20 +85,21 @@
                     Components
                 </div>
 
-                <!-- Nav Item - Pages -->
+                <!-- Nav Item - 1 -->
                 <li class="nav-item">
                     <a class="nav-link" href="buttons.html">
                         <i class="fa-sharp fa-light fa-image"></i>
-                        <span>
-                            <asp:ContentPlaceHolder ID="ComponentsText1" runat="server">Component1</asp:ContentPlaceHolder>
+                        <span>相簿
+                            <%--<asp:ContentPlaceHolder ID="ComponentsText1" runat="server">相簿</asp:ContentPlaceHolder>--%>
                         </span>
                     </a>
                 </li>
+                <!-- Nav Item - 2 -->
                 <li class="nav-item">
                     <a class="nav-link" href="cards.html">
                         <i class="fa-sharp fa-light fa-film"></i>
-                        <span>
-                <asp:ContentPlaceHolder ID="ComponentsText2" runat="server">Component2</asp:ContentPlaceHolder>
+                        <span>影片
+                            <%--<asp:ContentPlaceHolder ID="ComponentsText2" runat="server">影片</asp:ContentPlaceHolder>--%>
                         </span>
                     </a>
                 </li>
@@ -106,22 +107,22 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider">
 
-                <!-- Nav Item - Charts -->
+                <!-- Nav Item - 3 -->
                 <li class="nav-item">
                     <a class="nav-link" href="charts.html">
                         <i class="fa-sharp fa-light fa-comments"></i>
-                        <span>
-                            <asp:ContentPlaceHolder ID="ComponentsText3" runat="server">Component3</asp:ContentPlaceHolder>
+                        <span>Q&A
+                            <%--<asp:ContentPlaceHolder ID="ComponentsText3" runat="server">Q&A</asp:ContentPlaceHolder>--%>
                         </span>
                     </a>
                 </li>
 
-                <!-- Nav Item - Tables -->
+                <!-- Nav Item - 4 -->
                 <li class="nav-item">
                     <a class="nav-link" href="tables.html">
                         <i class="fa-sharp fa-light fa-list"></i>
-                        <span>
-                            <asp:ContentPlaceHolder ID="ComponentsText4" runat="server">Component4</asp:ContentPlaceHolder>
+                        <span>連結
+                            <%--<asp:ContentPlaceHolder ID="ComponentsText4" runat="server">連結</asp:ContentPlaceHolder>--%>
                         </span>
                     </a>
                 </li>
@@ -130,6 +131,24 @@
                 <hr class="sidebar-divider d-none d-md-block">
             </ul>
             <!-- End of Sidebar -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid" style="padding-top: 70px;">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                        <i class="fas fa-download fa-sm text-white-50"></i>Generate Report
+                    </a>
+                </div>
+                <!-- Your Dashboard content -->
+                <div>
+                    <!-- Add your Dashboard content here -->
+                    <!-- For example: -->
+                    <p>Welcome to the Dashboard!</p>
+                    <!-- Include other Dashboard elements, charts, or data -->
+                </div>
+            </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

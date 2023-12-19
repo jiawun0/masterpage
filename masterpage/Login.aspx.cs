@@ -13,5 +13,20 @@ namespace masterpage
         {
 
         }
+
+        protected void HomeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
