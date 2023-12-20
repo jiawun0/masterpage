@@ -80,6 +80,7 @@
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="homepage.aspx" />
     <Content Include="js\scripts.js" />
+    <Content Include="LinkCategoryBack.aspx" />
     <Content Include="Login2.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Register.aspx" />
@@ -1763,6 +1764,13 @@
     </Compile>
     <Compile Include="homepage.aspx.designer.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinkCategoryBack.aspx.cs">
+      <DependentUpon>LinkCategoryBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkCategoryBack.aspx.designer.cs">
+      <DependentUpon>LinkCategoryBack.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login2.aspx.cs">
       <DependentUpon>Login2.aspx</DependentUpon>
