@@ -15,7 +15,7 @@ namespace masterpage
             Session.Clear();
 
             // 跳轉至登入頁面
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login2.aspx");
         }
     }
 }
