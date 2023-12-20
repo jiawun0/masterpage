@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="masterpage.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="masterpage.Site2" %>
 
 <!DOCTYPE html>
 
@@ -33,20 +33,18 @@
             <nav class="navbar navbar-expand-lg bg-secondary text-uppercase " id="mainNav">
                 <div class="container">
                     <a class="navbar-brand" href="#page-top">
-                        <asp:ContentPlaceHolder ID="BrandContent" runat="server">這個頁面的名稱</asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="HeaderTitle" runat="server">這個頁面的名稱</asp:ContentPlaceHolder>
                     </a>
                     <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         Menu
                     <i class="fas fa-bars"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <asp:ContentPlaceHolder ID="NavbarLinks" runat="server">
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.aspx">首頁</a></li>
-                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="login.aspx">登入</a></li>
-                                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="logout.aspx">登出</a></li>
-                            </ul>
-                        </asp:ContentPlaceHolder>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="homepage.aspx">首頁</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="Login.aspx">登入</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="Logout.aspx">登出</a></li>
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -61,7 +59,7 @@
                     </div>
                     <div class="sidebar-brand-text mx-3">
                         目前登入者:
-                        <asp:ContentPlaceHolder ID="SidebarBrandText" runat="server">未登入 <sup>村民</sup></asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="Sidebar" runat="server">未登入 <sup>村民</sup></asp:ContentPlaceHolder>
                     </div>
                 </a>
 
@@ -72,9 +70,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>
-                            後台管理
-                            <asp:ContentPlaceHolder ID="DashboardText" runat="server"></asp:ContentPlaceHolder>
+                        <span>後台管理
                         </span>
                     </a>
                 </li>
@@ -91,18 +87,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="buttons.html">
                         <i class="fa-sharp fa-light fa-image"></i>
-                        <span>相簿
-                            <%--<asp:ContentPlaceHolder ID="ComponentsText1" runat="server">相簿</asp:ContentPlaceHolder>--%>
-                        </span>
+                        <span>相簿</span>
                     </a>
                 </li>
                 <!-- Nav Item - 2 -->
                 <li class="nav-item">
                     <a class="nav-link" href="cards.html">
                         <i class="fa-sharp fa-light fa-film"></i>
-                        <span>影片
-                            <%--<asp:ContentPlaceHolder ID="ComponentsText2" runat="server">影片</asp:ContentPlaceHolder>--%>
-                        </span>
+                        <span>影片</span>
                     </a>
                 </li>
 
@@ -113,9 +105,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="charts.html">
                         <i class="fa-sharp fa-light fa-comments"></i>
-                        <span>Q&A
-                            <%--<asp:ContentPlaceHolder ID="ComponentsText3" runat="server">Q&A</asp:ContentPlaceHolder>--%>
-                        </span>
+                        <span>Q&A</span>
                     </a>
                 </li>
 
@@ -123,9 +113,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="tables.html">
                         <i class="fa-sharp fa-light fa-list"></i>
-                        <span>連結
-                            <%--<asp:ContentPlaceHolder ID="ComponentsText4" runat="server">連結</asp:ContentPlaceHolder>--%>
-                        </span>
+                        <span>連結</span>
                     </a>
                 </li>
 
@@ -139,25 +127,23 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">
-                        <asp:ContentPlaceHolder ID="Title" runat="server">Title</asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="title" runat="server">Title</asp:ContentPlaceHolder>
                     </h1>
-                    <%--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                        <i class="fas fa-download fa-sm text-white-50"></i> 下載?
-                    </a>--%>
                 </div>
                 <!-- Your Dashboard content -->
                 <div>
                     <!-- Add your Dashboard content here -->
                     <!-- For example: -->
                     <p>
-                        <asp:ContentPlaceHolder ID="Welcome" runat="server">Welcome</asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="content" runat="server">Welcome</asp:ContentPlaceHolder>
                     </p>
                     <!-- Include other Dashboard elements, charts, or data -->
                 </div>
             </div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:ContentPlaceHolder ID="body" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
 </body>
 </html>
+

@@ -7,11 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace masterpage
 {
-    public partial class homepage : System.Web.UI.Page
+    public partial class Logout : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // 清除 Session 範例
+            Session.Clear();
 
+            // 跳轉至登入頁面
+            Response.Redirect("Login.aspx");
         }
     }
 }

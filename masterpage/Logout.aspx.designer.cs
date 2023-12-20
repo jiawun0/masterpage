@@ -10,7 +10,7 @@
 
 namespace masterpage
 {
-    public partial class homepage
+    public partial class Logout
     {
     }
 }
