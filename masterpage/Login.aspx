@@ -21,14 +21,11 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="SidebarBrandText" runat="server">
     <!-- 抓取目前登入者的username -->
-    <asp:Label ID="Label1" runat="server" Text="目前登入者: "></asp:Label>
-    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+    <asp:Literal ID="Literal_someone" runat="server"></asp:Literal>
 </asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="DashboardText" runat="server">
-    後台管理
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="GridView_Login" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView_Login" runat="server" AutoGenerateColumns="False" DataKeyNames="Id">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             <asp:BoundField DataField="Realname" HeaderText="Realname" SortExpression="Realname" />
@@ -38,21 +35,47 @@
             <asp:BoundField DataField="Rank" HeaderText="Rank" SortExpression="Rank" />
             <asp:BoundField DataField="CreatDate" HeaderText="CreatDate" SortExpression="CreatDate" />
         </Columns>
-</asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectLogin %>" SelectCommand="SELECT * FROM [Login]"></asp:SqlDataSource>
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectLogin %>" SelectCommand="SELECT * FROM [Login]"></asp:SqlDataSource>
 </asp:Content>
 
-<%--<asp:Content ID="Content7" ContentPlaceHolderID="ComponentsText1" runat="server">
+<asp:Content ID="Content7" ContentPlaceHolderID="Title" runat="server">
+    <asp:Label ID="Label_title" runat="server" Text="登入知道大小事"></asp:Label>
+</asp:Content>
+
+<asp:Content ID="Content8" ContentPlaceHolderID="Welcome" runat="server">
+    <asp:Label ID="Label_content" runat="server" Text="請填寫資料"></asp:Label>
+    <br />
+    <br />
+    <asp:Label ID="Label_username" runat="server" Text="帳號:"></asp:Label>
+            <asp:TextBox ID="TextBox_Username" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Label ID="Label_password" runat="server" Text="密碼:"></asp:Label>
+            <asp:TextBox ID="TextBox_Password" runat="server" TextMode="Password" ></asp:TextBox>
+    <br />
+    <br />
+    <asp:Button ID="Button_login" runat="server" Text="登入" style="height: 32px" OnClick="Button_login_Click" />
+    &nbsp; &nbsp; &nbsp;<asp:Button ID="Button_loginnew" runat="server" Text="註冊新帳號" style="height: 32px" OnClick="Button_loginnew_Click" />
+</asp:Content>
+
+
+
+<%--這個刪掉有問題--%>
+<asp:Content ID="Content6" ContentPlaceHolderID="DashboardText" runat="server">
+</asp:Content>
+
+<%--<asp:Content ID="Content" ContentPlaceHolderID="ComponentsText1" runat="server">
     相簿
 </asp:Content>
 
-<asp:Content ID="Content8" ContentPlaceHolderID="ComponentsText2" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="ComponentsText2" runat="server">
     影片
 </asp:Content>
-<asp:Content ID="Content9" ContentPlaceHolderID="ComponentsText3" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="ComponentsText3" runat="server">
     Q&A
 </asp:Content>
-<asp:Content ID="Content10" ContentPlaceHolderID="ComponentsText4" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="ComponentsText4" runat="server">
     連結
 </asp:Content>--%>
 

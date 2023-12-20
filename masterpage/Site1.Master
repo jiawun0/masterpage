@@ -60,6 +60,7 @@
                         <i class="fa-sharp fa-light fa-circle-user"></i>
                     </div>
                     <div class="sidebar-brand-text mx-3">
+                        目前登入者:
                         <asp:ContentPlaceHolder ID="SidebarBrandText" runat="server">未登入 <sup>村民</sup></asp:ContentPlaceHolder>
                     </div>
                 </a>
@@ -72,7 +73,8 @@
                     <a class="nav-link" href="index.html">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>
-                            <asp:ContentPlaceHolder ID="DashboardText" runat="server">後台管理</asp:ContentPlaceHolder>
+                            後台管理
+                            <asp:ContentPlaceHolder ID="DashboardText" runat="server"></asp:ContentPlaceHolder>
                         </span>
                     </a>
                 </li>
@@ -136,16 +138,20 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                        <i class="fas fa-download fa-sm text-white-50"></i>Generate Report
-                    </a>
+                    <h1 class="h3 mb-0 text-gray-800">
+                        <asp:ContentPlaceHolder ID="Title" runat="server">Title</asp:ContentPlaceHolder>
+                    </h1>
+                    <%--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                        <i class="fas fa-download fa-sm text-white-50"></i> 下載?
+                    </a>--%>
                 </div>
                 <!-- Your Dashboard content -->
                 <div>
                     <!-- Add your Dashboard content here -->
                     <!-- For example: -->
-                    <p>Welcome to the Dashboard!</p>
+                    <p>
+                        <asp:ContentPlaceHolder ID="Welcome" runat="server">Welcome</asp:ContentPlaceHolder>
+                    </p>
                     <!-- Include other Dashboard elements, charts, or data -->
                 </div>
             </div>
