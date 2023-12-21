@@ -81,6 +81,7 @@
     <Content Include="defense.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="js\scripts.js" />
+    <Content Include="LinkBack.aspx" />
     <Content Include="LinkCategoryBack.aspx" />
     <Content Include="LinkCategoryFront.aspx" />
     <Content Include="Login2.aspx" />
@@ -1774,6 +1775,13 @@
     <Compile Include="homepage.aspx.designer.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LinkBack.aspx.cs">
+      <DependentUpon>LinkBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkBack.aspx.designer.cs">
+      <DependentUpon>LinkBack.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LinkCategoryBack.aspx.cs">
       <DependentUpon>LinkCategoryBack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1990,6 +1998,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Album\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
