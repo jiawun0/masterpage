@@ -68,52 +68,83 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>後台管理
-                        </span>
-                    </a>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>後台管理</span>
+                    <!-- 子選單開始 -->
+                    <ul class="nav flex-column sub-menu">
+                        <!-- Nav Item - 相簿 -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="相簿頁面的URL">
+                                <i class="fa-sharp fa-light fa-image"></i>
+                                <span class="fw-bold">相簿</span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - 影片 -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="影片頁面的URL">
+                                <i class="fa-sharp fa-light fa-film"></i>
+                                <span class="fw-bold">影片</span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Q&A -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Q&A頁面的URL">
+                                <i class="fa-sharp fa-light fa-comments"></i>
+                                <span class="fw-bold">Q&A</span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - 連結 -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="LinkCategoryBack.aspx">
+                                <i class="fa-sharp fa-light fa-list"></i>
+                                <span class="fw-bold">連結</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 子選單結束 -->
                 </li>
 
                 <!-- Divider -->
                 <hr class="sidebar-divider">
 
                 <!-- Heading -->
-                <div class="sidebar-heading">
-                    Components
+                <div class="nav-item active">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>前台呈現</span>
                 </div>
 
-                <!-- Nav Item - 1 -->
+                <!-- Nav Item - 相簿 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="buttons.html">
+                    <a class="nav-link" href="相簿頁面的URL">
                         <i class="fa-sharp fa-light fa-image"></i>
-                        <span>相簿</span>
+                        <span class="fw-bold">相簿</span>
                     </a>
                 </li>
-                <!-- Nav Item - 2 -->
+
+                <!-- Nav Item - 影片 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="cards.html">
+                    <a class="nav-link" href="影片頁面的URL">
                         <i class="fa-sharp fa-light fa-film"></i>
-                        <span>影片</span>
+                        <span class="fw-bold">影片</span>
                     </a>
                 </li>
 
-                <!-- Divider -->
-                <hr class="sidebar-divider">
-
-                <!-- Nav Item - 3 -->
+                <!-- Nav Item - Q&A -->
                 <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="Q&A頁面的URL">
                         <i class="fa-sharp fa-light fa-comments"></i>
-                        <span>Q&A</span>
+                        <span class="fw-bold">Q&A</span>
                     </a>
                 </li>
 
-                <!-- Nav Item - 4 -->
+                <!-- Nav Item - 連結 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="LinkCategoryBack.aspx">
+                    <a class="nav-link" href="LinkCategoryFront.aspx">
                         <i class="fa-sharp fa-light fa-list"></i>
-                        <span>連結</span>
+                        <span class="fw-bold">連結</span>
                     </a>
                 </li>
 

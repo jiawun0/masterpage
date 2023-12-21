@@ -60,27 +60,27 @@ namespace masterpage
                 Session["IsVideoM"] = IsVideoM;
                 Session["IsLinkM"] = IsLinkM;
 
-
-                if (IsAlbumM)
-                {
-                    Response.Write("<script>alert('登入成功');</script>");
-                    Response.Redirect("Backstage.aspx");
-                }
-                else if (IsVideoM)
-                {
-                    Response.Write("<script>alert('登入成功');</script>");
-                    Response.Redirect("Backstage.aspx");
-                }
-                else if (IsLinkM)
-                {
-                    Response.Write("<script>alert('登入成功');</script>");
-                    Response.Redirect("Backstage.aspx");
-                }
-                else
-                {
-                    Response.Write("<script>alert('登入成功');</script>");
-                    Response.Redirect("homepage.aspx");
-                }
+                Response.Redirect("homepage.aspx");
+                //if (IsAlbumM)
+                //{
+                //    Response.Write("<script>alert('登入成功');</script>");
+                //    Response.Redirect("Backstage.aspx");
+                //}
+                //else if (IsVideoM)
+                //{
+                //    Response.Write("<script>alert('登入成功');</script>");
+                //    Response.Redirect("Backstage.aspx");
+                //}
+                //else if (IsLinkM)
+                //{
+                //    Response.Write("<script>alert('登入成功');</script>");
+                //    Response.Redirect("Backstage.aspx");
+                //}
+                //else
+                //{
+                //    Response.Write("<script>alert('登入成功');</script>");
+                //    Response.Redirect("homepage.aspx");
+                //}
             }
             else
             {

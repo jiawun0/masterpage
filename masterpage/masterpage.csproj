@@ -78,9 +78,11 @@
     <Content Include="cssnav\styles.css" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="defense.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="js\scripts.js" />
     <Content Include="LinkCategoryBack.aspx" />
+    <Content Include="LinkCategoryFront.aspx" />
     <Content Include="Login2.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Register.aspx" />
@@ -1758,6 +1760,13 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="defense.aspx.cs">
+      <DependentUpon>defense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="defense.aspx.designer.cs">
+      <DependentUpon>defense.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1771,6 +1780,13 @@
     </Compile>
     <Compile Include="LinkCategoryBack.aspx.designer.cs">
       <DependentUpon>LinkCategoryBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinkCategoryFront.aspx.cs">
+      <DependentUpon>LinkCategoryFront.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkCategoryFront.aspx.designer.cs">
+      <DependentUpon>LinkCategoryFront.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login2.aspx.cs">
       <DependentUpon>Login2.aspx</DependentUpon>

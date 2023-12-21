@@ -18,12 +18,13 @@ namespace masterpage
                 if (Session["LoginId"] != null)
                 {
                     string loginId = Session["LoginId"].ToString();
-                    bool isAlbumM = (Session["IsAlbumM"] != null) ? (bool)Session["IsAlbumM"] : false;
-                    bool isVideoM = (Session["IsVideoM"] != null) ? (bool)Session["IsVideoM"] : false;
                     bool isLinkM = (Session["IsLinkM"] != null) ? (bool)Session["IsLinkM"] : false;
 
                     if (loginId != null && isLinkM)
                     {
+                        //顯示登入者
+                        string username = Showusername(loginId);
+                        Literal_someone.Text = "歡迎, " + username + "!";
                         ShowDB();
                     }
                     else
@@ -89,6 +90,36 @@ namespace masterpage
             GridView_LinkCategoryBack.DataBind();
 
             connection.Close();
+        }
+
+        string Showusername(string LoginId)
+        {
+            string username = "";
+
+            SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["ConnectLogin"].ConnectionString);
+            if (connection.State != System.Data.ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
+            string sql = "select Username from Login where Id = @LoginId";
+
+            SqlCommand sqlCommand = new SqlCommand(sql, connection);
+            sqlCommand.Parameters.AddWithValue("@LoginId", LoginId);
+
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    username = reader["Username"].ToString();
+                    break;
+                }
+            }
+
+            connection.Close();
+
+            return username;
         }
 
         protected void GridView_LinkCategoryBack_RowEditing(object sender, GridViewEditEventArgs e)
