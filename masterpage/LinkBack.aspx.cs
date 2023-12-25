@@ -16,11 +16,35 @@ namespace masterpage
         {
             if (!IsPostBack)
             {
-                if (Request.QueryString["CategoryID"] != null)
+                if (Session["LoginId"] != null)
                 {
-                    string CategoryID = Request.QueryString["CategoryID"];
+                    string loginId = Session["LoginId"].ToString();
+                    bool isLinkM = (Session["IsLinkM"] != null) ? (bool)Session["IsLinkM"] : false;
 
-                    ShowDB(CategoryID);
+                    if (loginId != null && isLinkM)
+                    {
+                        string username = Showusername(loginId);
+                        Literal_someone.Text = "歡迎, " + username + "!";
+
+                        if (Request.QueryString["CategoryID"] != null)
+                        {
+                            string CategoryID = Request.QueryString["CategoryID"];
+
+                            ShowDB(CategoryID);
+                        }
+
+                        else
+                        {
+                            //如果沒有抓取到QueryString，導回分類後台
+                            Response.Redirect("LinkCategoryBack.aspx");
+                        }
+                    }
+                }
+
+                else
+                {
+                    //抓不到登入資料
+                    Response.Redirect("Login2.aspx");
                 }
             }
         }
@@ -61,6 +85,36 @@ namespace masterpage
 
 
             connection.Close();
+        }
+
+        string Showusername(string LoginId)
+        {
+            string username = "";
+
+            SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["ConnectLogin"].ConnectionString);
+            if (connection.State != System.Data.ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
+            string sql = "select Username from Login where Id = @LoginId";
+
+            SqlCommand sqlCommand = new SqlCommand(sql, connection);
+            sqlCommand.Parameters.AddWithValue("@LoginId", LoginId);
+
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    username = reader["Username"].ToString();
+                    break;
+                }
+            }
+
+            connection.Close();
+
+            return username;
         }
 
         protected void UploadBtn_Click(object sender, EventArgs e)
