@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="signaltest.aspx.cs" Inherits="masterpage.signaltest" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>SignalR Sample</title>
-    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <%--<script src="Scripts/jquery-3.1.1.min.js"></script>--%>
     <script src="Scripts/jquery.signalR-2.4.3.min.js"></script>
     <script src="signalr/hubs"></script>
 </asp:Content>
@@ -17,15 +18,15 @@
     <!-- 顯示歷史訊息 -->
     <div id="messageHistory"></div>
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="content" runat="server"> 
+<asp:Content ID="Content5" ContentPlaceHolderID="content" runat="server">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.signalr/2.4.3/jquery.signalR.min.js"></script>
     <script>
         $(function () {
-            var chat = $.connection.chatHub;
+            var chat = $.connection.syscomHub1; // 此處改為您的 SignalR Hub 名稱
 
             // 在這裡設定 SignalR Hub 的 URL
-            $.connection.hub.url = "https://localhost:44392/Album_Front.aspx";
+            $.connection.hub.url = "https://localhost:88691/signaltest.aspx";
 
             $.connection.hub.start().done(function () {
                 // 連接成功，你可以在這裡進行額外的初始化
@@ -77,6 +78,7 @@
             });
         });
     </script>
+
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="body" runat="server">
 </asp:Content>

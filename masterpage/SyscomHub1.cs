@@ -10,6 +10,30 @@ namespace masterpage
 {
     public class SyscomHub1 : Hub
     {
+        //記錄使用者及文件資訊
+        //1.Sid：儲存SignalR自動產生的唯一識別碼 
+        //2.Name：儲存使用者於連線後自訂的名字 
+        //3.ConnectedTime：記錄使用者於何時連線的時間
+        public class UserData
+        {
+            public string Sid { get; set; }
+            public string Name { get; set; }
+            public string ConnectedTime { get; set; }
+        }
+
+        //記錄使用者及文件資訊
+        //1.lastEditId：記錄最後編輯使用者的Id 
+        //2.lastEditTime：記錄最後編輯的時間 
+        //3.lastEditName：記錄最後編輯使用者的名字 
+        //4.content：文件的內容 而上線清單利用Dictionary來儲存Id及使用者名稱
+        public class DocData
+        {
+            public string lastEditId { get; set; }
+            public string lastEditTime { get; set; }
+            public string lastEditName { get; set; }
+            public string content { get; set; }
+        }
+
         //儲存Id及使用者名稱
         public static ConcurrentDictionary<string, UserData> ConcurrentedUserList = new ConcurrentDictionary<string, UserData>();
 
@@ -49,6 +73,7 @@ namespace masterpage
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {
             UserData value;
+            //將使用者從上線清單移除
             ConcurrentedUserList.TryRemove(Context.ConnectionId, out value);
 
             // 呼叫所有客戶端，更新在線使用者列表
@@ -63,7 +88,7 @@ namespace masterpage
             uploadDocData.lastEditTime = DateTime.Now.ToString("f");
             docData = uploadDocData;
 
-            // 呼叫所有客戶端，更新文件內容
+            // 呼叫所有客戶端，記錄更新後的文件內容
             Clients.All.updateDocContent(docData);
         }
 
